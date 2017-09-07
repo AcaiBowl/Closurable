@@ -1,6 +1,6 @@
 //
-//  Reactable.swift
-//  Reactable
+//  Closurable.swift
+//  Closurable
 //
 //  Created by Toru Asai on 2017/09/07.
 //  Copyright © 2017年 AcaiBowl. All rights reserved.
