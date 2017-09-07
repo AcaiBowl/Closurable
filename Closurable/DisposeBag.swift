@@ -16,7 +16,7 @@ extension Disposable {
 
 public final class DisposeBag {
     
-    private let lock = NSRecursiveLock(name: "com.AcaiBowl.Reactable.lock")
+    private let lock = NSRecursiveLock(name: "com.AcaiBowl.Closurable.lock")
     private var disposables = [Disposable]()
     
     public init() {
