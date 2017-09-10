@@ -10,14 +10,25 @@ Simple, easy and lightweight library for MVVM.
 TODO
 
 ## Requirements
-TODO
+* Xcode9.0+
+* Swift4+
 
 ## Installation
-TODO
+### [Carthage](https://github.com/Carthage/Carthage)
 
-## Reference
-[ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift) [[MIT Lisense](https://github.com/ReactiveX/RxSwift/blob/master/LICENSE.md)] <br>
-[ReactiveKit/ReactiveKit](https://github.com/ReactiveKit/ReactiveKit) [[MIT License](https://github.com/ReactiveKit/ReactiveKit/blob/master/LICENSE)]
+Add this to `Cartfile`
+
+```ruby
+github "AcaiBowl/Closurable"
+```
+
+```bash
+$ carthage update
+```
+
+## References
+[ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift) [[Lisense](https://github.com/ReactiveX/RxSwift/blob/master/LICENSE.md)] <br>
+[ReactiveKit/ReactiveKit](https://github.com/ReactiveKit/ReactiveKit) [[License](https://github.com/ReactiveKit/ReactiveKit/blob/master/LICENSE)]
 
 **Thank you.**
 
