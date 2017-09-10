@@ -65,7 +65,7 @@ extension Closurable where Self: UIGestureRecognizer {
 }
 
 extension Closurable where Self: NotificationCenter {
-    public func on(name: NSNotification.Name?, object: Any? = nil, closure: @escaping (Any) -> Void) -> Disposable {
+    public func on(_ name: NSNotification.Name?, object: Any? = nil, closure: @escaping (Any) -> Void) -> Disposable {
         let container = Container(closure: closure)
         addObserver(container, selector: container.selector, name: name, object: object)
         return ActionDisposable(with: container, action: { [weak self] in
