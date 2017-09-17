@@ -1,6 +1,6 @@
 //
-//  Disposable.swift
-//  Reactable
+//  Releasable.swift
+//  Closurable
 //
 //  Created by Toru Asai on 2017/09/07.
 //  Copyright © 2017年 AcaiBowl. All rights reserved.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public protocol Disposable {
-    func dispose()
+public protocol Releasable {
+    func release()
 }
 
-public final class ActionDisposable: Disposable {
+public final class ActionReleasable: Releasable {
     private var _observer: Any?
     private var _action: (() -> Void)?
     
@@ -21,20 +21,20 @@ public final class ActionDisposable: Disposable {
         _action = action
     }
     
-    public func dispose() {
+    public func release() {
         _action?()
         _observer = nil
     }
 }
 
-public final class NoOptionalDisposable: Disposable {
+public final class NoOptionalReleasable: Releasable {
     private var _observer: Any?
     
     public init(with observer: Any) {
         _observer = observer
     }
     
-    public func dispose() {
+    public func release() {
         _observer = nil
     }
 }

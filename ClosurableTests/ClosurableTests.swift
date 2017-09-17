@@ -11,12 +11,12 @@ import XCTest
 
 class ClosurableTests: XCTestCase {
     
-    var bag: DisposeBag!
+    var bag: ReleaseBag!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        bag = DisposeBag()
+        bag = ReleaseBag()
     }
     
     override func tearDown() {
@@ -37,7 +37,7 @@ extension ClosurableTests {
         var count: Int = 0
         mock.subscribe(\.value) { (mock, _) in
             count += 1
-        }.disposed(by: bag)
+        }.released(by: bag)
         
         mock.value = "something"
         // .initial and .new
@@ -58,7 +58,7 @@ extension ClosurableTests {
         var count: Int = 0
         control.on(.valueChanged) { _ in
             count += 1
-        }.disposed(by: bag)
+        }.released(by: bag)
         
         control.sendActions(for: .valueChanged)
         XCTAssertEqual(count, 1)
@@ -78,7 +78,7 @@ extension ClosurableTests {
         var count: Int = 0
         button.onTap { _ in
             count += 1
-        }.disposed(by: bag)
+        }.released(by: bag)
         
         button.sendActions(for: .touchUpInside)
         XCTAssertEqual(count, 1)
@@ -97,7 +97,7 @@ extension ClosurableTests {
         var count: Int = 0
         item.onTap { _ in
             count += 1
-        }.disposed(by: bag)
+        }.released(by: bag)
         
         UIApplication.shared.sendAction(item.action!, to: item.target, from: item, for: nil)
         XCTAssertEqual(count, 1)
@@ -116,7 +116,7 @@ extension ClosurableTests {
         var count: Int = 0
         recognizer.on { _ in
             count += 1
-        }.disposed(by: bag)
+        }.released(by: bag)
         
         // TODO: Get action/target from UIGestureRecognizer
     }
@@ -129,7 +129,7 @@ extension ClosurableTests {
         var count: Int = 0
         NotificationCenter.default.on(name, object: nil) { _ in
             count += 1
-        }.disposed(by: bag)
+        }.released(by: bag)
         
         NotificationCenter.default.post(name: name, object: nil)
         XCTAssertEqual(count, 1)

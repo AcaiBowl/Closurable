@@ -10,9 +10,9 @@
 		956324331F619518009F020B /* Closurable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956324291F619518009F020B /* Closurable.framework */; };
 		956324381F619518009F020B /* ClosurableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956324371F619518009F020B /* ClosurableTests.swift */; };
 		9563243A1F619518009F020B /* Closurable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9563242C1F619518009F020B /* Closurable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		956324461F61954F009F020B /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956324431F61954F009F020B /* DisposeBag.swift */; };
+		956324461F61954F009F020B /* ReleaseBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956324431F61954F009F020B /* ReleaseBag.swift */; };
 		956324471F61954F009F020B /* Closurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956324441F61954F009F020B /* Closurable.swift */; };
-		956324481F61954F009F020B /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956324451F61954F009F020B /* Disposable.swift */; };
+		956324481F61954F009F020B /* Releasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956324451F61954F009F020B /* Releasable.swift */; };
 		95FEECF51F6C39FF0027908D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEECF41F6C39FF0027908D /* AppDelegate.swift */; };
 		95FEECF71F6C39FF0027908D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEECF61F6C39FF0027908D /* ViewController.swift */; };
 		95FEECFA1F6C39FF0027908D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FEECF81F6C39FF0027908D /* Main.storyboard */; };
@@ -44,9 +44,9 @@
 		956324321F619518009F020B /* ClosurableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClosurableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		956324371F619518009F020B /* ClosurableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurableTests.swift; sourceTree = "<group>"; };
 		956324391F619518009F020B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		956324431F61954F009F020B /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
+		956324431F61954F009F020B /* ReleaseBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseBag.swift; sourceTree = "<group>"; };
 		956324441F61954F009F020B /* Closurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closurable.swift; sourceTree = "<group>"; };
-		956324451F61954F009F020B /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		956324451F61954F009F020B /* Releasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Releasable.swift; sourceTree = "<group>"; };
 		95FEECF21F6C39FF0027908D /* ClosurableTestsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClosurableTestsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FEECF41F6C39FF0027908D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FEECF61F6C39FF0027908D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 				9563242C1F619518009F020B /* Closurable.h */,
 				9563242D1F619518009F020B /* Info.plist */,
 				956324441F61954F009F020B /* Closurable.swift */,
-				956324451F61954F009F020B /* Disposable.swift */,
-				956324431F61954F009F020B /* DisposeBag.swift */,
+				956324451F61954F009F020B /* Releasable.swift */,
+				956324431F61954F009F020B /* ReleaseBag.swift */,
 			);
 			path = Closurable;
 			sourceTree = "<group>";
@@ -282,8 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956324461F61954F009F020B /* DisposeBag.swift in Sources */,
-				956324481F61954F009F020B /* Disposable.swift in Sources */,
+				956324461F61954F009F020B /* ReleaseBag.swift in Sources */,
+				956324481F61954F009F020B /* Releasable.swift in Sources */,
 				956324471F61954F009F020B /* Closurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

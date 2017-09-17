@@ -13,25 +13,25 @@ extension NSObject: Closurable {}
 
 extension Closurable where Self: NSObject {    
     public func subscribe<Value>(_ keyPath: KeyPath<Self, Value>,
-                                 closure: @escaping (Self, NSKeyValueObservedChange<Value>) -> Void) -> Disposable {
+                                 closure: @escaping (Self, NSKeyValueObservedChange<Value>) -> Void) -> Releasable {
         let observation = observe(keyPath, options: [.new, .initial], changeHandler: closure)
-        return NoOptionalDisposable(with: observation)
+        return NoOptionalReleasable(with: observation)
     }
 }
 
 extension Closurable where Self: UIControl {
-    public func on(_ events: UIControlEvents, closure: @escaping (Any) -> Void) -> Disposable {
+    public func on(_ events: UIControlEvents, closure: @escaping (Any) -> Void) -> Releasable {
         let container = Container(closure: closure)
         addTarget(container, action: container.selector, for: events)
-        return NoOptionalDisposable(with: container)
+        return NoOptionalReleasable(with: container)
     }
 }
 
 extension Closurable where Self: UIButton {
-    public func onTap(_ closure: @escaping (Any) -> Void) -> Disposable {
+    public func onTap(_ closure: @escaping (Any) -> Void) -> Releasable {
         let container = Container(closure: closure)
         addTarget(container, action: container.selector, for: .touchUpInside)
-        return NoOptionalDisposable(with: container)
+        return NoOptionalReleasable(with: container)
     }
 }
 
@@ -48,27 +48,27 @@ extension Closurable where Self: UIBarButtonItem {
         self.style = style
     }
     
-    public func onTap(_ closure: @escaping (Any) -> Void) -> Disposable {
+    public func onTap(_ closure: @escaping (Any) -> Void) -> Releasable {
         let container = Container(closure: closure)
         self.target = container
         self.action = container.selector
-        return NoOptionalDisposable(with: container)
+        return NoOptionalReleasable(with: container)
     }
 }
 
 extension Closurable where Self: UIGestureRecognizer {
-    public func on(_ closure: @escaping (Any) -> Void) -> Disposable {
+    public func on(_ closure: @escaping (Any) -> Void) -> Releasable {
         let container = Container(closure: closure)
         addTarget(container, action: container.selector)
-        return NoOptionalDisposable(with: container)
+        return NoOptionalReleasable(with: container)
     }
 }
 
 extension Closurable where Self: NotificationCenter {
-    public func on(_ name: NSNotification.Name?, object: Any? = nil, closure: @escaping (Any) -> Void) -> Disposable {
+    public func on(_ name: NSNotification.Name?, object: Any? = nil, closure: @escaping (Any) -> Void) -> Releasable {
         let container = Container(closure: closure)
         addObserver(container, selector: container.selector, name: name, object: object)
-        return ActionDisposable(with: container, action: { [weak self] in
+        return ActionReleasable(with: container, action: { [weak self] in
             self?.removeObserver(container)
         })
     }
