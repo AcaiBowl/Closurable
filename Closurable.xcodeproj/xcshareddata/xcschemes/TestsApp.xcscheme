@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95FEECF11F6C39FF0027908D"
-               BuildableName = "ClosurableTestsApp.app"
-               BlueprintName = "ClosurableTestsApp"
+               BlueprintIdentifier = "9551B2E21F6F29210069E7DD"
+               BuildableName = "TestsApp.app"
+               BlueprintName = "TestsApp"
                ReferencedContainer = "container:Closurable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95FEECF11F6C39FF0027908D"
-            BuildableName = "ClosurableTestsApp.app"
-            BlueprintName = "ClosurableTestsApp"
+            BlueprintIdentifier = "9551B2E21F6F29210069E7DD"
+            BuildableName = "TestsApp.app"
+            BlueprintName = "TestsApp"
             ReferencedContainer = "container:Closurable.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,9 +57,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95FEECF11F6C39FF0027908D"
-            BuildableName = "ClosurableTestsApp.app"
-            BlueprintName = "ClosurableTestsApp"
+            BlueprintIdentifier = "9551B2E21F6F29210069E7DD"
+            BuildableName = "TestsApp.app"
+            BlueprintName = "TestsApp"
             ReferencedContainer = "container:Closurable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95FEECF11F6C39FF0027908D"
-            BuildableName = "ClosurableTestsApp.app"
-            BlueprintName = "ClosurableTestsApp"
+            BlueprintIdentifier = "9551B2E21F6F29210069E7DD"
+            BuildableName = "TestsApp.app"
+            BlueprintName = "TestsApp"
             ReferencedContainer = "container:Closurable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

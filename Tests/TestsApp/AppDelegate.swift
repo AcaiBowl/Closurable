@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ClosurableTestsApp
+//  TestsApp
 //
-//  Created by Toru Asai on 2017/09/16.
+//  Created by Toru Asai on 2017/09/18.
 //  Copyright © 2017年 AcaiBowl. All rights reserved.
 //
 

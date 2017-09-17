@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "956324311F619518009F020B"
-               BuildableName = "ClosurableTests.xctest"
-               BlueprintName = "ClosurableTests"
+               BlueprintIdentifier = "9551B2D31F6F29130069E7DD"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
                ReferencedContainer = "container:Closurable.xcodeproj">
             </BuildableReference>
          </TestableReference>

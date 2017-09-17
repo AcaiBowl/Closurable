@@ -1,8 +1,8 @@
 //
-//  ClosurableTests.swift
-//  ClosurableTests
+//  Tests.swift
+//  Tests
 //
-//  Created by Toru Asai on 2017/09/07.
+//  Created by Toru Asai on 2017/09/18.
 //  Copyright © 2017年 AcaiBowl. All rights reserved.
 //
 
@@ -22,7 +22,7 @@ class ClosurableTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }    
+    }
 }
 
 // MARK: - NSObject
@@ -30,14 +30,14 @@ extension ClosurableTests {
     class Mock: NSObject {
         @objc dynamic var value = "none"
     }
-
+    
     func test_NSObject_subscribe() {
         let mock = Mock()
         
         var count: Int = 0
         mock.subscribe(\.value) { (mock, _) in
             count += 1
-        }.released(by: bag)
+            }.released(by: bag)
         
         mock.value = "something"
         // .initial and .new
@@ -58,7 +58,7 @@ extension ClosurableTests {
         var count: Int = 0
         control.on(.valueChanged) { _ in
             count += 1
-        }.released(by: bag)
+            }.released(by: bag)
         
         control.sendActions(for: .valueChanged)
         XCTAssertEqual(count, 1)
@@ -78,7 +78,7 @@ extension ClosurableTests {
         var count: Int = 0
         button.onTap { _ in
             count += 1
-        }.released(by: bag)
+            }.released(by: bag)
         
         button.sendActions(for: .touchUpInside)
         XCTAssertEqual(count, 1)
@@ -97,7 +97,7 @@ extension ClosurableTests {
         var count: Int = 0
         item.onTap { _ in
             count += 1
-        }.released(by: bag)
+            }.released(by: bag)
         
         UIApplication.shared.sendAction(item.action!, to: item.target, from: item, for: nil)
         XCTAssertEqual(count, 1)
@@ -116,7 +116,7 @@ extension ClosurableTests {
         var count: Int = 0
         recognizer.on { _ in
             count += 1
-        }.released(by: bag)
+            }.released(by: bag)
         
         // TODO: Get action/target from UIGestureRecognizer
     }
@@ -129,7 +129,7 @@ extension ClosurableTests {
         var count: Int = 0
         NotificationCenter.default.on(name, object: nil) { _ in
             count += 1
-        }.released(by: bag)
+            }.released(by: bag)
         
         NotificationCenter.default.post(name: name, object: nil)
         XCTAssertEqual(count, 1)
