@@ -7,7 +7,41 @@ Simple, easy and lightweight library for MVVM.
 [![carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Usage
-TODO
+<img src="https://raw.githubusercontent.com/AcaiBowl/Closurable/master/usage.gif" width="200">
+
+```swift
+import Closurable
+
+final class ViewController: UIViewController {
+    @IBOutlet fileprivate weak var button: UIButton!
+    @IBOutlet fileprivate weak var buttonLabel: UILabel!
+    
+    fileprivate let bag = ReleaseBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // linking
+        button.onTap { [unowned self] _ in
+            self.viewModel.updateButtonCount()
+        }.released(by: bag)
+        
+        // binding
+        viewModel.subscribe(\.buttonCount) { [unowned self (viewModel, _) in
+            self.buttonLabel.text = "\(viewModel.buttonCount)"
+        }.released(by: bag)
+    }
+}
+
+final class ViewModel: NSObject {
+    @objc dynamic private(set) var buttonCount: Int = 0
+    
+    func updateButtonCount() {
+        buttonCount += 1
+    }
+}
+```
+and more...
 
 ## Requirements
 * Xcode9.0+
