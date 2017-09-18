@@ -50,11 +50,11 @@ final class ViewController: UIViewController {
 fileprivate extension ViewController {
     func linking() {
         rightBarButtonItem.onTap { [unowned self] _ in
-            self.viewModel.updateBarButtonItemCount()
+            self.viewModel.updateBarButtonItemTapCount()
         }.released(by: bag)
         
         button.onTap { [unowned self] _ in
-            self.viewModel.updateButtonCount()
+            self.viewModel.updateButtonTapCount()
         }.released(by: bag)
         
         slider.on(.valueChanged) { [unowned self] _ in
@@ -67,12 +67,12 @@ fileprivate extension ViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer()
         tapGestureRecognizer.on { [unowned self] _ in
-            self.viewModel.updateTappableViewCount()
+            self.viewModel.updateTappableViewTapCount()
         }.released(by: bag)
         tappableView.addGestureRecognizer(tapGestureRecognizer)
         
         notificationButton.onTap { [unowned self] _ in
-            self.viewModel.updateNotificationButtonCount()
+            self.viewModel.updateNotificationButtonTapCount()
             NotificationCenter.default.post(name: .demo, object: nil)
         }.released(by: bag)
         
@@ -82,12 +82,12 @@ fileprivate extension ViewController {
     }
     
     func binding() {
-        viewModel.subscribe(\.barButtonItemCount) { [unowned self] (viewModel, _) in
-            self.rightBarButtonItemLabel.text = "\(viewModel.barButtonItemCount)"
+        viewModel.subscribe(\.barButtonItemTapCount) { [unowned self] (viewModel, _) in
+            self.rightBarButtonItemLabel.text = "\(viewModel.barButtonItemTapCount)"
         }.released(by: bag)
         
-        viewModel.subscribe(\.buttonCount) { [unowned self] (viewModel, _) in
-            self.buttonLabel.text = "\(viewModel.buttonCount)"
+        viewModel.subscribe(\.buttonTapCount) { [unowned self] (viewModel, _) in
+            self.buttonLabel.text = "\(viewModel.buttonTapCount)"
         }.released(by: bag)
         
         viewModel.subscribe(\.sliderValue) { [unowned self] (viewModel, _) in
@@ -98,12 +98,12 @@ fileprivate extension ViewController {
             self.textFieldLabel.text = viewModel.textFieldText
         }.released(by: bag)
         
-        viewModel.subscribe(\.tappableViewCount) { [unowned self] (viewModel, _) in
-            self.tappableViewLabel.text = "\(viewModel.tappableViewCount)"
+        viewModel.subscribe(\.tappableViewTapCount) { [unowned self] (viewModel, _) in
+            self.tappableViewLabel.text = "\(viewModel.tappableViewTapCount)"
         }.released(by: bag)
         
         NotificationCenter.default.on(.demo) { [unowned self] _ in
-            self.notificationButtonLabel.text = "\(self.viewModel.notificationButtonCount)"
+            self.notificationButtonLabel.text = "\(self.viewModel.notificationButtonTapCount)"
         }.released(by: bag)
     }
 }

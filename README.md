@@ -1,11 +1,10 @@
 # Closurable
 Simple, easy and lightweight library for MVVM.
 
-[![release](https://img.shields.io/github/release/AcaiBowl/Closurable/all.svg)](https://github.com/AcaiBowl/Closurable/releases)
 [![Language](http://img.shields.io/badge/language-swift4-orange.svg?style=flat)](https://developer.apple.com/swift)
-[![Version](https://img.shields.io/cocoapods/v/Closurable.svg?style=flat)](http://cocoapods.org/pods/Closurable)
-[![License](https://img.shields.io/cocoapods/l/Closurable.svg?style=flat)](http://cocoapods.org/pods/Closurable)
 [![Platform](https://img.shields.io/cocoapods/p/Closurable.svg?style=flat)](http://cocoapods.org/pods/Closurable)
+[![License](https://img.shields.io/cocoapods/l/Closurable.svg?style=flat)](http://cocoapods.org/pods/Closurable)
+[![Version](https://img.shields.io/cocoapods/v/Closurable.svg?style=flat)](http://cocoapods.org/pods/Closurable)
 [![carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Usage
@@ -26,21 +25,21 @@ final class ViewController: UIViewController {
         
         // linking
         button.onTap { [unowned self] _ in
-            self.viewModel.updateButtonCount()
+            self.viewModel.updateButtonTapCount()
         }.released(by: bag)
         
         // binding
-        viewModel.subscribe(\.buttonCount) { [unowned self] (viewModel, _) in
-            self.buttonLabel.text = "\(viewModel.buttonCount)"
+        viewModel.subscribe(\.buttonTapCount) { [unowned self] (viewModel, _) in
+            self.buttonLabel.text = "\(viewModel.buttonTapCount)"
         }.released(by: bag)
     }
 }
 
 final class ViewModel: NSObject {
-    @objc dynamic private(set) var buttonCount: Int = 0
+    @objc dynamic private(set) var buttonTapCount: Int = 0
     
-    func updateButtonCount() {
-        buttonCount += 1
+    func updateButtonTapCount() {
+        buttonTapCount += 1
     }
 }
 ```
