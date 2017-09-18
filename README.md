@@ -27,7 +27,7 @@ final class ViewController: UIViewController {
         }.released(by: bag)
         
         // binding
-        viewModel.subscribe(\.buttonCount) { [unowned self (viewModel, _) in
+        viewModel.subscribe(\.buttonCount) { [unowned self] (viewModel, _) in
             self.buttonLabel.text = "\(viewModel.buttonCount)"
         }.released(by: bag)
     }
