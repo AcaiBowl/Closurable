@@ -16,6 +16,7 @@ final class ViewController: UIViewController {
     @IBOutlet fileprivate weak var button: UIButton!
     @IBOutlet fileprivate weak var buttonLabel: UILabel!
     
+    fileprivate let viewModel = ViewModel()
     fileprivate let bag = ReleaseBag()
     
     override func viewDidLoad() {
